@@ -7,8 +7,10 @@ const App = () => {
   return (
     <>
       <Header />
-      <Outlet/>
-      <Footer/>
+      <Outlet />
+      <div className='bg mt-48'>
+      <Footer />
+      </div>
     </>
   );
 };
