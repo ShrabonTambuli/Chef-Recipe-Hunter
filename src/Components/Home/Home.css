@@ -1,0 +1,11 @@
+.banner{
+    position: relative;
+    height: 890%;
+    width: 142%;
+    transform-origin: 0px 0px;
+    transform: scale(0.702604);
+    background: url(https://cdn.shopify.com/s/files/1/1215/2782/files/leo_ginyro_slide1_h2.png?v=1632801434) 0% 0% / 100% no-repeat;
+
+    /* background: url(https://cdn.shopify.com/s/files/1/1215/2782/files/leo_ginyro_slide1_h4.png?v=1633311618) 0% 0% / 100% no-repeat;
+    height: 100vh; */
+}
