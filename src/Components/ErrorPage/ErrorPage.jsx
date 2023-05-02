@@ -8,7 +8,9 @@ const ErrorPage = () => {
                 <img className='rounded-2xl' src="/images/error-page-img.webp" alt="" />
             </div>
             <div>
-                <button className='bg-orange-600 px-9 py-5 rounded-3xl text-white'>
+                <h1 className='font-semibold font-serif text-4xl'>PAGE NOT FOUNT</h1>
+                <h1 className='font-semibold font-serif text-4xl'>404</h1>
+                <button className='bg-orange-600 px-9 py-5 rounded-3xl text-white mt-4'>
                     <NavLink to="/">GO TO HOME PAGE</NavLink>
                 </button>
             </div>
