@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const LogIn = () => {
     return (
@@ -19,6 +20,9 @@ const LogIn = () => {
                         Submit
                     </Button>
                 </Form>
+                <Link to='/register'>
+                <p className='text-xl mt-7 font-serif font-semibold'><span className=' underline'>Sing up?</span> For new user.</p>
+                </Link>
             </div>
             <div>
                 <Form.Text className="text-muted text-xl font-serif font-semibold">
