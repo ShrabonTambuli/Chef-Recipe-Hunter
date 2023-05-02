@@ -8,9 +8,7 @@ const App = () => {
     <>
       <Header />
       <Outlet />
-      <div className='bg mt-48'>
       <Footer />
-      </div>
     </>
   );
 };
