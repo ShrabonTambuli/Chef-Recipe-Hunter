@@ -20,9 +20,16 @@ const Header = () => {
             </div>
             <div className='mx-auto inline-flex items-center'>
                 <div className='font-semibold font-serif text-xl'>
-                    <NavLink to='/login' >LogIn</NavLink>
+                    <button className='bg-orange-500 px-4 py-2 rounded-2xl'>
+                        <NavLink to='/login' >LogIn</NavLink>
+                    </button>
                 </div>
-                <img className='w-24 h-24 rounded-full ms-6' src="/images/Chef.jpg" alt="" />
+                <img className='w-16 h-16 rounded-full ms-6' src="/images/Chef.jpg" alt="" />
+                <div className='font-semibold font-serif text-xl ms-6'>
+                    <button className='bg-orange-500 px-4 py-2 rounded-2xl'>
+                        <NavLink to='/' >LogOut</NavLink>
+                    </button>
+                </div>
             </div>
         </nav>
     );
