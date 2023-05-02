@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import ChefsSection from '../ChefsSection/ChefsSection';
 
 const Home = () => {
+    const chefs = useLoaderData();
     return (
         <div>
             <div className='grid grid-cols-1 lg:grid-cols-2 text-center mt-14'>
@@ -12,6 +15,14 @@ const Home = () => {
                 </div>
                 <div>
                     <img src="/images/banner-img2.webp" alt="" />
+                </div>
+            </div>
+            <div>
+                <h1 className='text-center text-5xl font-serif font-semibold mt-16'>Chefs--Section</h1>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-7 px-10 mt-14'>
+                    {
+                        chefs.map(chef => <ChefsSection key={chef.id} chef={chef} />)
+                    }
                 </div>
             </div>
         </div>
