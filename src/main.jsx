@@ -11,29 +11,36 @@ import LogIn from './Components/LogIn/LogIn.jsx';
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import Registration from './Components/Registration/Registration.jsx';
 import Blog from './Components/Blog/Blog.jsx';
+import RecipeDetails from './Components/RecipeDetails/RecipeDetails.jsx';
+import AuthProviders from './providers/AuthProviders.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Home/>,
-        loader: ()=>fetch('http://localhost:5000/chefs')
+        element: <Home />,
+        loader: () => fetch('http://localhost:5000/chefs')
       },
       {
         path: "/login",
-        element: <LogIn/>,
+        element: <LogIn />,
       },
       {
         path: "/registration",
-        element: <Registration/>,
+        element: <Registration />,
       },
       {
         path: "/blog",
-        element: <Blog/>
+        element: <Blog />,
+      },
+      {
+        path: "/recipeDetails/:id",
+        element: <RecipeDetails />,
+        loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
       },
     ],
   },
@@ -42,8 +49,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
+    <AuthProviders>
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
+    </AuthProviders>
   </React.StrictMode>,
 )
