@@ -19,10 +19,10 @@ const Header = () => {
             <div className='mx-auto'>
                 <ul className='flex font-serif'>
                     <li>
-                        <NavLink to='/' className={({ isActive }) => (isActive ? 'text-orange-600' : '')}>Home</NavLink>
+                        <NavLink to='/' className={({ isActive }) => (isActive ? 'text-green-600' : '')}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/blog' className={({ isActive }) => (isActive ? 'text-orange-600' : '')}>Blog</NavLink>
+                        <NavLink to='/blog' className={({ isActive }) => (isActive ? 'text-green-600' : '')}>Blog</NavLink>
                     </li>
                 </ul>
             </div>
@@ -32,12 +32,12 @@ const Header = () => {
                 }
                 {user ?
                     <div className='font-semibold font-serif text-xl ms-6'>
-                        <button onClick={handleLogOut} className='bg-orange-500 px-4 py-2 rounded-2xl'>
+                        <button onClick={handleLogOut} className='bg-green-500 px-4 py-2 rounded-2xl'>
                             <NavLink to='/' >LogOut</NavLink>
                         </button>
                     </div> :
                     <div className='font-semibold font-serif text-xl'>
-                        <button className='bg-orange-500 px-4 py-2 rounded-2xl'>
+                        <button className='bg-green-500 px-4 py-2 rounded-2xl'>
                             <NavLink to='/login' >LogIn</NavLink>
                         </button>
                     </div>

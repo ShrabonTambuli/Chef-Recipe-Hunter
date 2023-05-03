@@ -37,15 +37,15 @@ const RecipeDetails = () => {
         <div>
             <div className='grid grid-cols-1 lg:grid-cols-2 text-center mt-14'>
                 <div className='text-center'>
-                    <h4 className='text-orange-600 font-serif font-semibold text-4xl mt-4'>{Chef_Name}</h4>
+                    <h4 className='text-green-600 font-serif font-semibold text-4xl mt-4'>{Chef_Name}</h4>
                     <h1 className='text-black font-serif text-3xl leading-tight mt-8'>Bio--</h1>
                     <p className='text-black font-serif text-2xl mt-6 px-5'>{a_short_bio_description}</p>
-                    <hr className='mt-6 mx-14 border-2 border-orange-600' />
+                    <hr className='mt-6 mx-14 border-2 border-green-600' />
                     <div className='flex justify-around mt-8'>
                         <p className='text-black font-serif text-3xl leading-tight'>Likes: {Likes}</p>
                         <p className='text-black font-serif text-3xl leading-tight'>Recipes: {Numbers_of_recipes}</p>
                     </div>
-                    <button className=' bg-orange-600 text-black font-serif text-2xl mt-10 px-7 py-4 rounded-2xl'><Link to='/booking' >{Years_of_experience}</Link></button>
+                    <button className=' bg-green-600 text-black font-serif text-2xl mt-10 px-7 py-4 rounded-2xl'><Link to='/booking' >{Years_of_experience}</Link></button>
                 </div>
                 <div>
                     <img className='rounded-2xl border-2 border-green-600' src={Chef_Picture} alt="" />
@@ -54,7 +54,7 @@ const RecipeDetails = () => {
             <div>
                 <h1 className='text-center mt-16 text-4xl font-serif font-semibold'>--:Recipes:--</h1>
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10 ms-10'>
-                    <Card className='border-2 border-orange-600 rounded-xl pb-4' style={{ width: '24rem' }}>
+                    <Card className='border-2 border-green-600 rounded-xl pb-4' style={{ width: '24rem' }}>
                         <Card.Img className='p-2 rounded-2xl h-72 w-full' variant="top" src={recipe_img} />
                         <Card.Body className='px-2'>
                             <Card.Title className='font-semibold font-serif text-xl'>{recipe_name}</Card.Title>
@@ -64,13 +64,13 @@ const RecipeDetails = () => {
                         </Card.Body>
                         <Card.Body className='px-2 mt-6 font-serif font-semibold text-xl text-white'>
                             {
-                                show && (<button onClick={notify} className='bg-orange-600 w-full rounded-2xl py-2'>{Favorite_button}</button>)
+                                show && (<button onClick={notify} className='bg-green-500 w-full rounded-2xl py-2'>{Favorite_button}</button>)
 
                             }
                             <ToastContainer />
                         </Card.Body>
                     </Card>
-                    <Card className='border-2 border-orange-600 rounded-xl pb-4' style={{ width: '24rem' }}>
+                    <Card className='border-2 border-green-600 rounded-xl pb-4' style={{ width: '24rem' }}>
                         <Card.Img className='p-2 rounded-2xl h-72 w-full' variant="top" src={recipe_img2} />
                         <Card.Body className='px-2'>
                             <Card.Title className='font-semibold font-serif text-xl'>{recipe_name2}</Card.Title>
@@ -80,13 +80,13 @@ const RecipeDetails = () => {
                         </Card.Body>
                         <Card.Body className='px-2 mt-6 font-serif font-semibold text-xl text-white'>
                             {
-                                view && (<button onClick={notify2} className='bg-orange-600 w-full rounded-2xl py-2'>{Favorite_button2}</button>)
+                                view && (<button onClick={notify2} className='bg-green-500 w-full rounded-2xl py-2'>{Favorite_button2}</button>)
 
                             }
                             <ToastContainer />
                         </Card.Body>
                     </Card>
-                    <Card className='border-2 border-orange-600 rounded-xl pb-4' style={{ width: '24rem' }}>
+                    <Card className='border-2 border-green-600 rounded-xl pb-4' style={{ width: '24rem' }}>
                         <Card.Img className='p-2 rounded-2xl h-72 w-full' variant="top" src={recipe_img3} />
                         <Card.Body className='px-2'>
                             <Card.Title className='font-semibold font-serif text-xl'>{recipe_name3}</Card.Title>
@@ -96,7 +96,7 @@ const RecipeDetails = () => {
                         </Card.Body>
                         <Card.Body className='px-2 mt-6 font-serif font-semibold text-xl text-white'>
                             {
-                                see && (<button onClick={notify3} className='bg-orange-600 w-full rounded-2xl py-2'>{Favorite_button3}</button>)
+                                see && (<button onClick={notify3} className='bg-green-500 w-full rounded-2xl py-2'>{Favorite_button3}</button>)
 
                             }
                             <ToastContainer />

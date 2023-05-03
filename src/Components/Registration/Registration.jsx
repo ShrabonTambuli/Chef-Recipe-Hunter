@@ -14,9 +14,13 @@ const Registration = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        if(password.length > 6){
+            setError('Please add less then 6 characters in your password');
+        }
+
         createUser(email, password)
         .then ((result)=>{
-            const createdUser = result.user;
             updateProfile(result.user, {
                 displayName: name, photoURL: photo
             })
@@ -29,7 +33,7 @@ const Registration = () => {
     }
 
     return (
-        <div className='text-center mt-16 py-40 bg-orange-600'>
+        <div className='text-center mt-16 py-40 bg-slate-700'>
             <div>
                 <Form onSubmit={handleRegister}>
                     <Form.Group className="mb-3" controlId="formBasicName">
@@ -49,7 +53,7 @@ const Registration = () => {
                         <Form.Control className='px-24 py-2 text-center rounded-xl border-2 bg-slate-800 border-green-500 text-white' type="text"
                             name='photo' placeholder="Photo URL" required />
                     </Form.Group>
-                    <Button className='bg-green-500 py-2 px-5 rounded-xl ' variant="primary" type="submit">
+                    <Button className='bg-green-500 py-2 px-5 rounded-xl font-serif font-semibold' variant="primary" type="submit">
                         Register
                     </Button>
                 </Form>

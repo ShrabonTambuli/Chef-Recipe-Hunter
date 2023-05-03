@@ -10,7 +10,7 @@ const ErrorPage = () => {
             <div>
                 <h1 className='font-semibold font-serif text-4xl'>PAGE NOT FOUNT</h1>
                 <h1 className='font-semibold font-serif text-4xl'>404</h1>
-                <button className='bg-orange-600 px-9 py-5 rounded-3xl text-white mt-4'>
+                <button className='bg-green-600 px-9 py-5 rounded-3xl text-white mt-4'>
                     <NavLink to="/">GO TO HOME PAGE</NavLink>
                 </button>
             </div>
