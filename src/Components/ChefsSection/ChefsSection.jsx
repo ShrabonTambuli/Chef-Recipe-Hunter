@@ -8,7 +8,7 @@ const ChefsSection = ({ chef }) => {
     return (
         <div>
             <CardGroup>
-                <Card className='rounded-xl bg-orange-500 pb-5'>
+                <Card className='rounded-xl bg-green-500 pb-5'>
                     <Card.Img className='w-full h-80 rounded-2xl p-1' variant="top" src={Chef_Picture} />
                     <Card.Body className='ps-6'>
                         <Card.Title className='text-3xl font-serif font-semibold'>{Chef_Name}</Card.Title>

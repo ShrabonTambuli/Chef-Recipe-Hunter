@@ -14,7 +14,7 @@ const Home = () => {
                     <h4 className='text-orange-600 font-serif text-2xl mt-14'>ONLY THE BEST</h4>
                     <h1 className='text-black font-serif text-7xl leading-tight mt-14'>FRESH <br /> SEAFOOD</h1>
                     <p className='text-black font-serif text-2xl mt-6'>Join us at the table as you dine for the perfect meal.</p>
-                    <button className=' bg-orange-600 text-black font-serif text-2xl mt-10 px-7 py-4 rounded-2xl'><Link to='/booking' >BOOK A TABLE</Link></button>
+                    <button className=' bg-green-500 text-black font-serif text-2xl mt-10 px-7 py-4 rounded-2xl'><Link to='/booking' >BOOK A TABLE</Link></button>
                 </div>
                 <div>
                     <img src="/images/banner-img2.webp" alt="" />

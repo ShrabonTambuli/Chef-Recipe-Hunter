@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase/firebase.init';
 
 export const AuthContext = createContext(null);
@@ -7,8 +7,9 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app)
 
 const AuthProviders = ({children}) => {
-    const Provider = new GoogleAuthProvider()
-    const [user, setUser] = useState(null)
+    const provider = new GoogleAuthProvider();
+    const provider2 = new GithubAuthProvider();
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) =>{
@@ -18,6 +19,28 @@ const AuthProviders = ({children}) => {
     const singIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    const googleSignIn = () =>{
+        signInWithPopup(auth, provider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        } )
+        .catch(error => {
+            console.log(error.message)
+        })
+    }
+
+    const githubSignIn = () =>{
+        signInWithPopup(auth, provider2)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        } )
+        .catch(error => {
+            console.log(error.message)
+        })
     }
 
     const logOut = () =>{
@@ -38,12 +61,15 @@ const AuthProviders = ({children}) => {
 
 
     const authInfo = {
-        Provider,
+        provider,
+        provider2,
         user,
         createUser,
         singIn,
         logOut,
-        loading
+        loading,
+        googleSignIn,
+        githubSignIn
     }
     return (
         <AuthContext.Provider value={authInfo}>
