@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeDetails = () => {
     const chef = useLoaderData();
     const { Chef_Name, Chef_Picture, Likes, Numbers_of_recipes, a_short_bio_description, Years_of_experience } = chef;
 
     const { recipe_name, recipe_name2, recipe_name3, recipe_img, recipe_img2, recipe_img3, recipe_cooking_method, recipe_cooking_method2, recipe_cooking_method3, recipe_rating, recipe_rating2, recipe_rating3, Favorite_button, Favorite_button2, Favorite_button3 } = chef;
+
+    const [show, setShow] = useState(true)
+    const [view, setView] = useState(true)
+    const [see, setSee] = useState(true)
+
+    const notify = () => {
+        toast("This Recipe Is My Favorite!!");
+        if (show == true) {
+            setShow(false);
+        }
+    }
+    const notify2 = () => {
+        toast("This Recipe Is My Favorite!!");
+        if (view == true) {
+            setView(false);
+        }
+    }
+    const notify3 = () => {
+        toast("This Recipe Is My Favorite!!");
+        if (see == true) {
+            setSee(false);
+        }
+    }
+
     return (
         <div>
             <div className='grid grid-cols-1 lg:grid-cols-2 text-center mt-14'>
@@ -37,7 +63,11 @@ const RecipeDetails = () => {
                             <ListGroup.Item className='mt-4 font-serif font-semibold'><span className='font-semibold'>Rating:</span> {recipe_rating}</ListGroup.Item>
                         </Card.Body>
                         <Card.Body className='px-2 mt-6 font-serif font-semibold text-xl text-white'>
-                            <button className='bg-orange-600 w-full rounded-2xl py-2'>{Favorite_button}</button>
+                            {
+                                show && (<button onClick={notify} className='bg-orange-600 w-full rounded-2xl py-2'>{Favorite_button}</button>)
+
+                            }
+                            <ToastContainer />
                         </Card.Body>
                     </Card>
                     <Card className='border-2 border-orange-600 rounded-xl pb-4' style={{ width: '24rem' }}>
@@ -49,7 +79,11 @@ const RecipeDetails = () => {
                             <ListGroup.Item className='mt-4 font-serif font-semibold'><span className='font-semibold'>Rating:</span> {recipe_rating2}</ListGroup.Item>
                         </Card.Body>
                         <Card.Body className='px-2 mt-6 font-serif font-semibold text-xl text-white'>
-                            <button className='bg-orange-600 w-full rounded-2xl py-2'>{Favorite_button2}</button>
+                            {
+                                view && (<button onClick={notify2} className='bg-orange-600 w-full rounded-2xl py-2'>{Favorite_button2}</button>)
+
+                            }
+                            <ToastContainer />
                         </Card.Body>
                     </Card>
                     <Card className='border-2 border-orange-600 rounded-xl pb-4' style={{ width: '24rem' }}>
@@ -61,7 +95,11 @@ const RecipeDetails = () => {
                             <ListGroup.Item className='mt-4 font-serif font-semibold'><span className='font-semibold'>Rating:</span> {recipe_rating3}</ListGroup.Item>
                         </Card.Body>
                         <Card.Body className='px-2 mt-6 font-serif font-semibold text-xl text-white'>
-                            <button className='bg-orange-600 w-full rounded-2xl py-2'>{Favorite_button3}</button>
+                            {
+                                see && (<button onClick={notify3} className='bg-orange-600 w-full rounded-2xl py-2'>{Favorite_button3}</button>)
+
+                            }
+                            <ToastContainer />
                         </Card.Body>
                     </Card>
                 </div>
