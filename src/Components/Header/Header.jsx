@@ -5,6 +5,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 
 const Header = () => {
     const { user, logOut} = useContext(AuthContext);
+    console.log(user);
     const handleLogOut = () =>{
         logOut()
         .then()
@@ -28,7 +29,8 @@ const Header = () => {
             </div>
             <div className='mx-auto inline-flex items-center'>
                 {
-                    user && <img className='w-16 h-16 rounded-full ms-6' src="/images/Chef.jpg" alt="" />
+                    user && <img title={user.displayName} className='w-16 h-16 rounded-full ms-6 border-2 border-green-500' src={user.photoURL
+                    } alt="" />
                 }
                 {user ?
                     <div className='font-semibold font-serif text-xl ms-6'>
