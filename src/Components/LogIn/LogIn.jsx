@@ -16,7 +16,7 @@ const LogIn = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        if(password.length > 6){
+        if (password.length > 6) {
             setError('Please add less then 6 characters in your password');
         }
 
@@ -32,12 +32,14 @@ const LogIn = () => {
             })
     }
 
-    const handleGoogle = () =>{
+    const handleGoogle = () => {
         googleSignIn();
+        navigate(from, { replace: true })
     }
 
-    const handleGithub = () =>{
+    const handleGithub = () => {
         githubSignIn();
+        navigate(from, { replace: true })
     }
 
     return (

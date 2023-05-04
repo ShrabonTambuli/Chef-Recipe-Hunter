@@ -24,10 +24,9 @@ const Registration = () => {
             updateProfile(result.user, {
                 displayName: name, photoURL: photo
             })
-            console.log(result.user);
         })
         .catch((error)=>{
-            console.log(error);
+            return(error);
 
         })
     }
