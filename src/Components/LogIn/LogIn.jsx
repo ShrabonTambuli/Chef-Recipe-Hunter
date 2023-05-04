@@ -59,7 +59,7 @@ const LogIn = () => {
                     </Button>
                 </Form>
                 <Link to='/registration'>
-                    <p className='text-xl mt-7 font-serif font-semibold'><span className=' underline'>Sing up</span> ?  For new user.</p>
+                    <p className='text-xl mt-7 font-serif font-semibold text-white'><span className=' underline'>Sing up</span> ?  For new user.</p>
                 </Link>
                 <div className='flex justify-around mt-6'>
                     <button onClick={handleGoogle}>
@@ -71,7 +71,7 @@ const LogIn = () => {
                 </div>
             </div>
             <div>
-                <Form.Text className="text-muted text-xl font-serif font-semibold">
+                <Form.Text className="text-muted text-xl font-serif font-semibold text-white">
                     We'll never share your email with anyone else.
                 </Form.Text>
             </div>

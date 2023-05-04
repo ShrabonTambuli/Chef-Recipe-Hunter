@@ -2,6 +2,7 @@ import React from 'react';
 import { HandThumbUpIcon } from '@heroicons/react/24/solid'
 import { Card, CardGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ChefsSection = ({ chef }) => {
     const { Chef_Name, Chef_Picture, Likes, Numbers_of_recipes, View_Recipes_Button, Years_of_experience, id } = chef;
@@ -9,7 +10,7 @@ const ChefsSection = ({ chef }) => {
         <div>
             <CardGroup>
                 <Card className='rounded-xl pb-5 border-2 border-green-500'>
-                    <Card.Img className='w-full h-80 rounded-2xl p-1' variant="top" src={Chef_Picture} />
+                    <LazyLoadImage delayTime={100} delayMethod='throttle' alt={Chef_Picture.alt}  className='w-full h-80 rounded-2xl p-1' variant="top" src={Chef_Picture} />
                     <Card.Body className='ps-6'>
                         <Card.Title className='text-3xl font-serif font-semibold'>{Chef_Name}</Card.Title>
                         <Card.Text className='text-lg font-sans font-semibold mt-2'>

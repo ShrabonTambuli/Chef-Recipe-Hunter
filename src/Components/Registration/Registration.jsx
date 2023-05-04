@@ -58,7 +58,7 @@ const Registration = () => {
                     </Button>
                 </Form>
                 <Link to='/login'>
-                    <p className='text-xl mt-7 font-serif font-semibold'>Already Have An Account ? <span className=' underline'>LogIn</span></p>
+                    <p className='text-xl mt-7 font-serif font-semibold text-white'>Already Have An Account ? <span className=' underline'>LogIn</span></p>
                 </Link>
             </div>
         </div>
